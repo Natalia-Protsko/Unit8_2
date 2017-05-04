@@ -16,7 +16,7 @@ public class TestGenericMethod {
         lsRE.add(new RetiredEmployee("Forth Employee"));
         lsRE.add(new RetiredEmployee("Fifth Employee"));
 
-        lsE = copyRetired(lsRE);
+        lsE = copyEmployee(lsRE);
 
         lsRE.get(1).changeName("AAA");
 
@@ -25,7 +25,7 @@ public class TestGenericMethod {
         }
     }
 
-    static LinkedList<Employee> copyRetired(LinkedList<RetiredEmployee> ls){
+    static LinkedList<Employee> copyEmployee(LinkedList<? extends Employee> ls){
         LinkedList<Employee> res = new LinkedList<>();
         res.addAll(ls);
         return res;
